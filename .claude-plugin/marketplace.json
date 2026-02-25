@@ -1,0 +1,26 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "indie-studio-roadmap",
+  "metadata": {
+    "description": "AI-Native Roadmap Orchestrator for indie studios (1-5 people + AI agents) building B2B SaaS products."
+  },
+  "owner": {
+    "name": "Contan2",
+    "url": "https://github.com/onick"
+  },
+  "plugins": [
+    {
+      "name": "indie-studio-roadmap",
+      "description": "Director Técnico, Product Architect y Release Captain. Manages roadmap, sprints, releases, modules, tech debt, and metrics across Claude Code sessions with persistent state.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Contan2",
+        "url": "https://github.com/onick"
+      },
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://github.com/onick/indie-studio-roadmap",
+      "tags": ["roadmap", "sprint", "saas", "indie", "b2b", "release", "tech-debt", "modules", "ai-native", "orchestrator"]
+    }
+  ]
+}

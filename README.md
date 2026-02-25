@@ -1,6 +1,6 @@
 # 🗺️ Indie Studio Roadmap Orchestrator
 
-**Claude Code Skill** — Director Técnico, Product Architect y Release Captain para estudios indie (1-5 personas + agentes AI) construyendo productos B2B SaaS.
+**Claude Code Plugin** — Director Técnico, Product Architect y Release Captain para estudios indie (1-5 personas + agentes AI) construyendo productos B2B SaaS.
 
 ## Qué hace
 
@@ -12,27 +12,13 @@ Gestiona roadmap, sprints, releases y deuda técnica entre sesiones de Claude Co
 - **Product Architect:** Módulos con dependencias claras. Un módulo terminado > tres empezados.
 - **Release Captain:** Staging → QA → tag → producción. Sin excepciones.
 
-## Instalación
+## Installation
 
-### Opción 1: Clonar e instalar
-
-```bash
-# Clonar
-git clone https://github.com/onick/indie-studio-roadmap.git ~/.agents/skills/indie-studio-roadmap
-
-# Symlink del skill
-ln -s ../../.agents/skills/indie-studio-roadmap ~/.claude/skills/indie-studio-roadmap
-
-# Copiar commands (slash commands)
-cp -r ~/.agents/skills/indie-studio-roadmap/.claude/commands/roadmap-*.md ~/.claude/commands/
+```
+/plugin marketplace add onick/indie-studio-roadmap
 ```
 
-### Opción 2: Manual
-
-Copia los archivos a sus ubicaciones:
-- `SKILL.md` + `references/` → `~/.agents/skills/indie-studio-roadmap/`
-- `.claude/commands/roadmap-*.md` → `~/.claude/commands/`
-- Symlink: `~/.claude/skills/indie-studio-roadmap` → skill directory
+Then run `/plugin menu` to install. Restart Claude Code after.
 
 ## Comandos
 
@@ -78,31 +64,37 @@ Al ejecutar `/roadmap-init`, se genera `.indie-studio/` en tu proyecto:
 - Equipos de 1-5 personas + agentes AI
 - Productos B2B SaaS
 
-## Estructura del Skill
+## Estructura
 
 ```
 indie-studio-roadmap/
-├── SKILL.md                              # Cerebro principal
-├── README.md                             # Este archivo
-├── references/
-│   ├── product-strategy.md               # Estrategia B2B SaaS
-│   ├── release-management.md             # Git flow, Docker, staging-first
-│   ├── tech-debt-patterns.md             # Patrones de deuda técnica
-│   ├── ai-native-workflows.md            # Coordinación humanos + AI
-│   ├── metrics-and-kpis.md               # Métricas pre/post-launch
-│   ├── infrastructure-checklist.md       # VPS, Docker, backups
-│   ├── saas-launch-checklist.md          # Checklist para lanzar SaaS
-│   └── module-decomposition.md           # Descomponer en módulos
-└── .claude/
-    └── commands/
-        ├── roadmap-init.md
-        ├── roadmap-status.md
-        ├── roadmap-sprint.md
-        ├── roadmap-release.md
-        ├── roadmap-audit.md
-        ├── roadmap-pivot.md
-        ├── roadmap-retro.md
-        └── roadmap-sync.md
+├── .claude-plugin/
+│   ├── plugin.json                       # Plugin metadata
+│   └── marketplace.json                  # Marketplace registry
+├── .claude/
+│   ├── commands/
+│   │   ├── roadmap-init.md
+│   │   ├── roadmap-status.md
+│   │   ├── roadmap-sprint.md
+│   │   ├── roadmap-release.md
+│   │   ├── roadmap-audit.md
+│   │   ├── roadmap-pivot.md
+│   │   ├── roadmap-retro.md
+│   │   └── roadmap-sync.md
+│   └── skills/
+│       └── indie-studio-roadmap/
+│           ├── SKILL.md                  # Cerebro principal
+│           └── references/
+│               ├── product-strategy.md
+│               ├── release-management.md
+│               ├── tech-debt-patterns.md
+│               ├── ai-native-workflows.md
+│               ├── metrics-and-kpis.md
+│               ├── infrastructure-checklist.md
+│               ├── saas-launch-checklist.md
+│               └── module-decomposition.md
+├── LICENSE
+└── README.md
 ```
 
 ## Idioma
@@ -110,7 +102,7 @@ indie-studio-roadmap/
 - **Comunicación:** Español
 - **Código, commits, variables:** Inglés
 
-## Licencia
+## License
 
 MIT
 
