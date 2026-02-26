@@ -1,0 +1,17 @@
+---
+description: "G2: Define content architecture before writing templates"
+alwaysApply: true
+globs: "content/**/*"
+---
+
+# Content Architecture Before Templates
+
+Before writing a single template, define content structure:
+- What are sections vs pages?
+- What are leaf bundles vs branch bundles?
+- What taxonomies are needed?
+- What archetypes facilitate content creation?
+
+Every section MUST have an `_index.md` file.
+Use `index.md` (no underscore) for leaf bundles.
+Use `_index.md` (with underscore) for branch bundles.

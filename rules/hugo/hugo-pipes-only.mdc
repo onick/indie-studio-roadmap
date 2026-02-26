@@ -1,0 +1,19 @@
+---
+description: "G3: Use Hugo Pipes for ALL asset processing, not external tools"
+alwaysApply: true
+globs: "assets/**/*"
+---
+
+# Hugo Pipes for ALL Assets
+
+NEVER use webpack, gulp, vite, or other external bundlers when Hugo Pipes can handle it.
+
+Hugo built-in capabilities:
+- `css.Sass` / `css.TailwindCSS` — SCSS and Tailwind
+- `css.PostCSS` — PostCSS with plugins
+- `js.Build` — ESBuild for JS/TS bundling
+- `resources.Fingerprint` — Cache busting
+- `resources.Minify` — Minification
+- Image processing (Resize, Fit, Fill, Crop, Filter)
+
+Assets go in `assets/` directory (NOT `static/`). Files in `static/` are copied without processing.

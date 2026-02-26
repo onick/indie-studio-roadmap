@@ -1,0 +1,16 @@
+---
+description: "G8: Structure for i18n from day one if multilingual is possible"
+alwaysApply: false
+globs: "i18n/**/*"
+---
+
+# i18n from Day One
+
+If the site may need multiple languages, structure for i18n from the start. It's 10x more expensive to add later.
+
+Requirements:
+- Use translation keys in `i18n/` directory
+- Use `relLangURL` / `absLangURL` for all URLs in templates
+- Never hardcode UI strings in templates
+- Create language switcher partial
+- Decide content strategy: by filename or by directory

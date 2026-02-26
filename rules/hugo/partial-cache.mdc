@@ -1,0 +1,20 @@
+---
+description: "G5: Cache expensive partials with partialCached"
+alwaysApply: true
+globs: "layouts/**/*.html"
+---
+
+# Cache Expensive Partials
+
+Heavy partials (queries, image processing, complex logic) MUST use `partialCached` with appropriate keys:
+
+```html
+{{/* SLOW: re-executes on every page */}}
+{{ partial "expensive-sidebar.html" . }}
+
+{{/* FAST: cached per Section */}}
+{{ partialCached "expensive-sidebar.html" . .Section }}
+
+{{/* FAST: cached per Language + Section */}}
+{{ partialCached "nav.html" . .Language.Lang .Section }}
+```

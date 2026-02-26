@@ -1,0 +1,17 @@
+---
+description: "G1: Verify Hugo template lookup order before creating any template"
+alwaysApply: true
+globs: "layouts/**/*.html"
+---
+
+# Lookup Order First
+
+NEVER create a Hugo template without verifying the lookup order.
+
+Before creating any template:
+1. Determine the page kind (home, section, taxonomy, term, page)
+2. Determine the type and layout
+3. Determine the output format
+4. Place the file at the correct path according to Hugo's lookup order
+
+A template in the wrong location is silently ignored by Hugo.

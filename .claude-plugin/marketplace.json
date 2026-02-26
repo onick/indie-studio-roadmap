@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "indie-studio-roadmap",
   "metadata": {
-    "description": "AI-Native Orchestrator v2.0 for indie studios (1-5 people + AI agents) building B2B SaaS products. 4-phase loop with human approval gates."
+    "description": "AI-Native Orchestrator v2.0 + Hugo Expert Agent. Two skills: SaaS roadmap orchestrator and senior Hugo developer."
   },
   "owner": {
     "name": "Contan2",
@@ -11,8 +11,8 @@
   "plugins": [
     {
       "name": "indie-studio-roadmap",
-      "description": "4-phase orchestration loop (Architect → Backend → Frontend → QA) with mandatory human approval at each step. Manages roadmap, sprints, releases, modules, tech debt, metrics, and agent delegation across Claude Code sessions.",
-      "version": "2.0.0",
+      "description": "Two specialized skills: (1) AI-Native Orchestrator with 4-phase loop (Architect → Backend → Frontend → QA) for indie studios building B2B SaaS, and (2) Hugo Expert — senior Hugo developer for static sites with templates, content management, Hugo Pipes, modules, and deployment.",
+      "version": "3.0.0",
       "author": {
         "name": "Contan2",
         "url": "https://github.com/onick"
@@ -20,7 +20,7 @@
       "source": "./",
       "category": "productivity",
       "homepage": "https://github.com/onick/indie-studio-roadmap",
-      "tags": ["roadmap", "sprint", "saas", "indie", "b2b", "release", "tech-debt", "modules", "ai-native", "orchestrator", "multi-agent", "human-in-the-loop", "delegation"]
+      "tags": ["roadmap", "sprint", "saas", "indie", "b2b", "release", "tech-debt", "ai-native", "orchestrator", "hugo", "static-site", "go-templates", "tailwindcss", "seo", "deployment"]
     }
   ]
 }

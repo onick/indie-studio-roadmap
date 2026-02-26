@@ -1,0 +1,17 @@
+---
+description: "G7: Zero JavaScript by default - every KB must be justified"
+alwaysApply: true
+globs: "assets/js/**/*"
+---
+
+# Zero JavaScript by Default
+
+A Hugo site is static. Every KB of JavaScript must be justified.
+
+Prefer:
+- CSS-only solutions (transitions, animations, details/summary)
+- Hugo's built-in features
+- Web Components if interactivity is needed
+- `type="module"` or `defer` for all scripts
+
+Never add JavaScript that could be solved with CSS or server-side rendering.

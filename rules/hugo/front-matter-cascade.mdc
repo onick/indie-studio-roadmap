@@ -1,0 +1,20 @@
+---
+description: "G6: Use front matter cascade for DRY content configuration"
+alwaysApply: true
+globs: "content/**/_index.md"
+---
+
+# Front Matter Cascade for DRY
+
+Don't repeat front matter in every page. Use `cascade` in section `_index.md` files to inherit common values:
+
+```yaml
+# content/blog/_index.md
+cascade:
+  type: "blog"
+  params:
+    show_sidebar: true
+    show_toc: true
+```
+
+All child pages inherit these values unless they override them explicitly.

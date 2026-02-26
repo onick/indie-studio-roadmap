@@ -1,0 +1,18 @@
+---
+description: "G4: Use page bundles for content with associated resources"
+alwaysApply: true
+globs: "content/**/*"
+---
+
+# Page Bundles for Content with Resources
+
+If a page has images, PDFs, or other associated files, USE leaf bundles:
+
+```
+content/posts/my-post/
+├── index.md          # The page
+├── hero.jpg          # Page resource
+└── diagram.svg       # Page resource
+```
+
+Do NOT put images loosely in `static/`. Page resources are accessible via `.Resources` methods and can be processed by Hugo Pipes.
