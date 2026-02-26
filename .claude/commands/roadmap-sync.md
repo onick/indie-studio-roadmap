@@ -1,6 +1,6 @@
 # /roadmap-sync — Sincronizar Estado vs Realidad
 
-Eres el **Indie Studio Roadmap Orchestrator**. Sincroniza el estado persistente con la realidad del codebase.
+Eres el **Indie Studio Orchestrator v2.0**. Sincroniza el estado persistente con la realidad del codebase.
 
 ## Instrucciones
 
@@ -32,6 +32,8 @@ Para cada archivo `.indie-studio/`:
 - Tareas marcadas como pendientes pero con commits → "Tarea completada no marcada"
 - Tareas marcadas como completadas pero sin codigo → "Tarea falsamente completada"
 - Tareas que no tienen commits en 5+ dias → "Tarea posiblemente abandonada"
+- **Tareas sin campo Bucle asignado** → "Tarea sin fases del bucle (v2.0 requerido)"
+- **Tareas con fase del bucle desactualizada** (ej: dice "esperando backend" pero el codigo ya existe) → "Fase del bucle desincronizada"
 
 **debt-register.md:**
 - TODOs/FIXMEs en codigo que no estan registrados → "Deuda no registrada"
@@ -44,6 +46,7 @@ Para cada archivo `.indie-studio/`:
 
 **metrics.md:**
 - Sprints completados sin entrada de velocity → "Metrica faltante"
+- **Sprints sin Approval Rate registrado** → "Approval Rate faltante (v2.0)"
 
 ### Paso 3: Reportar Discrepancias
 
@@ -64,6 +67,8 @@ Estado: [N discrepancias encontradas]
   ✅ TASK-001 — estado correcto
   ⚠️  TASK-002 — marcada pendiente, tiene 3 commits
   🔴 TASK-003 — sin commits en 7 dias
+  🔄 TASK-004 — sin campo Bucle (migrar a formato v2.0)
+  🔄 TASK-005 — Bucle dice "⏸️👨‍💻" pero backend ya existe en codigo
 
 💳 DEBT-REGISTER.MD
   🆕 3 TODOs nuevos encontrados en [archivos]
@@ -74,6 +79,7 @@ Estado: [N discrepancias encontradas]
 
 📈 METRICS.MD
   ⚠️  Sprint 3 completado sin velocity registrada
+  ⚠️  Sprint 3 sin Approval Rate
 ```
 
 ### Paso 4: Auto-corregir (con permiso)
@@ -84,6 +90,8 @@ Si aprueba, actualiza cada archivo:
 - Agrega modulos no registrados a modules.md.
 - Actualiza porcentajes basandose en codigo real.
 - Marca tareas completadas en sprint-current.md.
+- **Asigna campo Bucle a tareas que no lo tengan** (migra formato v1 → v2.0).
+- **Actualiza fase del bucle** basandose en que codigo existe.
 - Registra deuda nueva en debt-register.md.
 - Documenta releases faltantes en releases.md.
 - Completa metricas faltantes en metrics.md.
@@ -104,3 +112,4 @@ Detecta y sugiere eliminar:
 - No crees modulos nuevos solo porque encontraste un archivo. Verifica que sea intencional.
 - Si el codebase tiene muchos cambios no reflejados, sugiere correr `/roadmap-retro` primero.
 - Se especifico: "archivo X, linea Y" cuando reportes TODOs no registrados.
+- **Migracion v1→v2.0:** Si detectas tareas sin campo Bucle, ofrecelo como correccion automatica.

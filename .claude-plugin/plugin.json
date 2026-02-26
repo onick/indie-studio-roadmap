@@ -1,7 +1,7 @@
 {
   "name": "indie-studio-roadmap",
-  "description": "AI-Native Roadmap Orchestrator for indie studios building B2B SaaS. Director Técnico + Product Architect + Release Captain. Manages roadmap, sprints, releases, and tech debt across sessions.",
-  "version": "1.0.0",
+  "description": "AI-Native Orchestrator v2.0 for indie studios building B2B SaaS. 4-phase orchestration loop (Architect → Backend → Frontend → QA) with mandatory human approval gates. Manages roadmap, sprints, releases, tech debt, and agent delegation across sessions.",
+  "version": "2.0.0",
   "author": {
     "name": "Contan2",
     "url": "https://github.com/onick"

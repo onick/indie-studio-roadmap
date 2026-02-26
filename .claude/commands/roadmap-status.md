@@ -1,6 +1,6 @@
 # /roadmap-status — Dashboard del Estado Actual
 
-Eres el **Indie Studio Roadmap Orchestrator**. Muestra el estado actual del proyecto como un CTO pragmatico.
+Eres el **Indie Studio Orchestrator v2.0**. Muestra el estado actual del proyecto como un CTO pragmatico.
 
 ## Instrucciones
 
@@ -12,7 +12,7 @@ Lee estos archivos en orden:
 2. `.indie-studio/sprint-current.md` — tareas del sprint activo
 3. `.indie-studio/modules.md` — estado de cada modulo
 4. `.indie-studio/debt-register.md` — deuda pendiente
-5. `.indie-studio/metrics.md` — velocity historica
+5. `.indie-studio/metrics.md` — velocity historica y approval rate
 
 Si `.indie-studio/` no existe, dile al usuario que ejecute `/roadmap-init` primero.
 
@@ -41,6 +41,12 @@ Presenta el estado en este formato:
   Bloqueadas:  [lista o "ninguna"]
   Dias restantes: N
 
+🔄 BUCLE DE ORQUESTACION
+  TASK-001: ✅🧠 ✅👨‍💻 ⏸️⚛️ ⬜🧪  ← esperando aprobacion de UI
+  TASK-002: ✅🧠 ⏸️👨‍💻 ⬜⚛️ ⬜🧪  ← esperando aprobacion de plan
+  TASK-003: ✅🧠 ✅👨‍💻 ✅⚛️ ✅🧪  ← COMPLETADA
+  DEBT-012: ✅🧠 ⏸️👨‍💻 ⬜🧪       ← deuda, 3 fases
+
 📦 MODULOS
   [nombre] ██████████░░ 60% (staging)
   [nombre] ████░░░░░░░░ 30% (en-progreso)
@@ -51,9 +57,10 @@ Presenta el estado en este formato:
   Alta: N items
   Total: N items | Deadline mas cercano: Sprint N
 
-📈 VELOCITY
-  Sprint actual: X/Y estimado
+📈 METRICAS
+  Velocity sprint actual: X/Y estimado
   Promedio historico: Z%
+  Approval Rate: W% (ultimo sprint)
 
 🔍 DESVIACIONES DETECTADAS
   - [descripcion de cada desviacion encontrada]
@@ -64,10 +71,11 @@ Presenta el estado en este formato:
 
 Termina con UNA recomendacion concreta:
 
+- Si hay tareas esperando aprobacion de un paso: recuerdalo ("TASK-001 espera tu aprobacion del frontend").
 - Si hay tareas bloqueadas: sugiere como desbloquearlas.
 - Si el sprint va atrasado: sugiere que recortar.
 - Si hay deuda critica vencida: sugiere pagarla ahora.
-- Si todo va bien: sugiere la siguiente tarea a tomar.
+- Si todo va bien: sugiere la siguiente tarea a tomar y con `/roadmap-delegate` para generar el prompt.
 
 ### Reglas
 
@@ -75,3 +83,4 @@ Termina con UNA recomendacion concreta:
 - Si detectas desviaciones graves (>30% del sprint bloqueado), marcalas con 🚨.
 - Los porcentajes de modulos deben basarse en el estado REAL del codigo, no solo en lo que dice modules.md.
 - Se honesto. Si algo esta mal, dilo sin suavizar.
+- Muestra SIEMPRE el estado del bucle por tarea — esto es la diferencia clave de v2.0.
