@@ -1,0 +1,11 @@
+---
+description: "G3: Less for all styling — no CSS-in-JS, styled-components, or Tailwind"
+alwaysApply: true
+globs: "src/**/*.less"
+---
+
+# Less Only for Styling
+
+All styling uses Less. Never introduce styled-components, Tailwind, CSS modules, or CSS-in-JS.
+Each component has a colocated `styles.less` file.
+Colors from `stremio-colors` package. Breakpoints from `screen-sizes.less`.

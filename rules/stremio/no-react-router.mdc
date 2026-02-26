@@ -1,0 +1,12 @@
+---
+description: "G2: Custom hash router only — never import React Router"
+alwaysApply: true
+globs: "src/**/*.{js,jsx,ts,tsx}"
+---
+
+# Custom Hash Router Only
+
+This project uses a custom hash-based router. NEVER import React Router.
+Navigation: `window.location.hash = '#/path'`
+Route patterns: `src/common/routesRegexp.js`
+Route components: `src/routes/index.js`

@@ -1,0 +1,12 @@
+---
+description: "G1: WASM core is the single source of truth — never manage business state in React"
+alwaysApply: true
+globs: "src/**/*.{js,jsx,ts,tsx}"
+---
+
+# WASM Core is Source of Truth
+
+NEVER manage business state in React (useState, useReducer, Context for business data).
+All state comes from the WASM core via `useModelState`.
+All actions go through `core.transport.dispatch()`.
+React is a pure view layer.

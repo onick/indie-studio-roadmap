@@ -1,6 +1,6 @@
-# Indie Studio Toolkit v3.0
+# Indie Studio Toolkit v4.0
 
-**Claude Code + Cursor IDE Plugin** — Dos skills especializados en un plugin: Orchestrator para B2B SaaS + Hugo Expert para sitios estaticos.
+**Claude Code + Cursor IDE Plugin** — Tres skills especializados en un plugin: SaaS Orchestrator + Hugo Expert + Stremio Web Expert.
 
 Compatible con **Claude Code** y **Cursor IDE**.
 
@@ -18,8 +18,6 @@ Backend       ->  Apruebas la API?
 Frontend      ->  Apruebas la UI?
 QA & Release  ->  Listo para commit
 ```
-
-El agente NUNCA avanza sin tu aprobacion. Tu eres El Piloto.
 
 ### Comandos Roadmap
 
@@ -41,46 +39,63 @@ El agente NUNCA avanza sin tu aprobacion. Tu eres El Piloto.
 
 Senior Hugo Developer + Site Architect. Experto completo en el framework Hugo (Go).
 
-### Tres sombreros
-
-- **Arquitecto de Contenido** — Bundles, taxonomias, secciones, multilingual, archetypes
-- **Template Engineer** — Go templates, partials, lookup order, render hooks, shortcodes
-- **Asset Pipeline Specialist** — Hugo Pipes (SCSS, Tailwind, PostCSS, ESBuild, image processing)
-
 ### Comandos Hugo
 
 | Comando | Que hace |
 |---------|----------|
-| `/hugo-init` | Bootstrap: escanea sitio Hugo o crea nuevo, genera `.hugo-expert/` |
-| `/hugo-template` | Crea o debuggea templates (con lookup order verification) |
+| `/hugo-init` | Bootstrap sitio Hugo, genera `.hugo-expert/` |
+| `/hugo-template` | Crea o debuggea templates (lookup order verification) |
 | `/hugo-content` | Organiza contenido: bundles, taxonomias, archetypes, i18n |
 | `/hugo-pipes` | Configura asset pipeline: Tailwind, SCSS, ESBuild, imagenes |
 | `/hugo-deploy` | Prepara deployment: Netlify, Vercel, CF Pages, GH Pages, VPS |
 | `/hugo-audit` | Auditoria completa: 8 dimensiones, score /40 |
 
-### 8 Guardrails Hugo
+---
 
-1. **Lookup Order First** — Verifica ANTES de crear templates
-2. **Content Architecture First** — Estructura antes que templates
-3. **Hugo Pipes Only** — No webpack/vite/gulp
-4. **Page Bundles** — Contenido + recursos juntos
-5. **Partial Cache** — `partialCached` para partials pesados
-6. **Front Matter Cascade** — DRY con herencia
-7. **Zero JS Default** — Cada KB debe justificarse
-8. **i18n Day One** — Multilingue desde el inicio
+## Skill 3: Stremio Web Expert (NEW)
+
+Senior Stremio Web Developer. Especializado en la arquitectura unica de stremio-web: React 18 SPA + Rust/WASM core.
+
+### Tres sombreros
+
+- **WASM Bridge Architect** — Core WASM, useModelState, CoreSuspender, dispatch patterns
+- **UI Component Engineer** — 32+ componentes, Less styling, spatial navigation, PWA
+- **Addon & Streaming Specialist** — Addon protocol, player, Chromecast, streaming server
+
+### Comandos Stremio
+
+| Comando | Que hace |
+|---------|----------|
+| `/stremio-init` | Analiza codebase, genera `.stremio-expert/` |
+| `/stremio-component` | Crea o modifica componentes (Less, props, spatial nav) |
+| `/stremio-route` | Crea o modifica rutas (hash router, CoreSuspender) |
+| `/stremio-addon` | Scaffold, debug, o integrar addons |
+| `/stremio-audit` | Auditoria completa: 8 dimensiones, score /40 |
+| `/stremio-debug` | Debug WASM bridge, routing, player, streaming, build |
+
+### 8 Guardrails Stremio
+
+1. **WASM Core = Truth** — Estado de negocio solo en el core Rust
+2. **Custom Hash Router** — No React Router, jamas
+3. **Less Only** — No CSS-in-JS, no Tailwind, no styled-components
+4. **Reuse Components** — 32 componentes base antes de crear nuevos
+5. **Worker Thread** — WASM en Web Worker, main thread libre
+6. **Spatial Navigation** — tabIndex en todo, Smart TV compatible
+7. **PWA Compliant** — Service worker, offline, manifest
+8. **i18n Mandatory** — t('KEY') para toda string visible
 
 ### 8 Reference Documents
 
 | Reference | Contenido |
 |-----------|-----------|
-| `hugo-templating.md` | Go templates, partials, lookup order, funciones, render hooks |
-| `hugo-content-management.md` | Bundles, taxonomias, archetypes, front matter, multilingual, menus |
-| `hugo-pipes-assets.md` | SCSS, Tailwind, PostCSS, ESBuild, image processing, fingerprinting |
-| `hugo-modules-themes.md` | Hugo Modules, temas, mounts, vendoring |
-| `hugo-shortcodes-hooks.md` | Shortcodes built-in y custom, render hooks (7 tipos) |
-| `hugo-configuration.md` | hugo.toml completo, config directory, environments |
-| `hugo-deployment.md` | Netlify, Vercel, CF Pages, GH Pages, VPS, CI/CD |
-| `hugo-performance-seo.md` | Build optimization, SEO, OG, JSON-LD, Lighthouse |
+| `wasm-core-bridge.md` | Core WASM, dispatch, useModelState, CoreSuspender, modelos |
+| `react-components.md` | Sistema de componentes, patrones, Less, colores, imports |
+| `custom-router.md` | Hash router, routesRegexp, navegacion, crear rutas |
+| `addon-system.md` | Protocolo, manifest, transport URLs, crear addons |
+| `player-streaming.md` | Player, streaming server, Chromecast, subtitulos |
+| `build-tooling.md` | Webpack 5, loaders, Docker, CI/CD, env vars |
+| `pwa-platform.md` | PWA, platform detection, Shell, iOS, spatial nav |
+| `testing-i18n.md` | Jest, translation scan, ESLint, testing patterns |
 
 ---
 
@@ -96,16 +111,13 @@ Then run `/plugin menu` to install. Restart Claude Code after.
 
 ### Cursor IDE
 
-1. Clone or download this repo
-2. Copy the Cursor directories into your project:
-
 ```bash
 cp -r skills/ /path/to/your-project/.cursor/skills/
 cp -r rules/ /path/to/your-project/.cursor/rules/
 cp -r commands/ /path/to/your-project/.cursor/commands/
 ```
 
-3. Restart Cursor IDE
+Restart Cursor IDE.
 
 ---
 
@@ -113,38 +125,22 @@ cp -r commands/ /path/to/your-project/.cursor/commands/
 
 ```
 indie-studio-roadmap/
-├── .claude-plugin/                        # Claude Code metadata
-│   ├── plugin.json
-│   └── marketplace.json
-├── .claude/                               # Claude Code
+├── .claude-plugin/                           # Claude Code metadata
+├── .claude/                                  # Claude Code
 │   ├── commands/
-│   │   ├── roadmap-*.md                   #   9 roadmap commands
-│   │   └── hugo-*.md                      #   6 hugo commands
+│   │   ├── roadmap-*.md                      #   9 roadmap commands
+│   │   ├── hugo-*.md                         #   6 hugo commands
+│   │   └── stremio-*.md                      #   6 stremio commands
 │   └── skills/
-│       ├── indie-studio-roadmap/
-│       │   ├── SKILL.md                   #   Orchestrator brain
-│       │   └── references/                #   8 SaaS references
-│       └── hugo-expert/
-│           ├── SKILL.md                   #   Hugo brain
-│           └── references/                #   8 Hugo references
+│       ├── indie-studio-roadmap/             #   SaaS Orchestrator
+│       ├── hugo-expert/                      #   Hugo Expert
+│       └── stremio-expert/                   #   Stremio Expert
 │
-├── skills/                                # Cursor: skills
-│   └── hugo-expert/
-│       ├── SKILL.md
-│       └── references/
-├── commands/                              # Cursor: commands
-│   └── hugo/
-│       └── hugo-*.md
-├── rules/                                 # Cursor: rules (.mdc)
-│   └── hugo/
-│       ├── lookup-order-first.mdc
-│       ├── content-before-templates.mdc
-│       ├── hugo-pipes-only.mdc
-│       ├── page-bundles.mdc
-│       ├── partial-cache.mdc
-│       ├── front-matter-cascade.mdc
-│       ├── zero-js-default.mdc
-│       └── i18n-from-day-one.mdc
+├── skills/                                   # Cursor: skills
+├── commands/                                 # Cursor: commands
+├── rules/                                    # Cursor: rules (.mdc)
+│   ├── hugo/                                 #   8 Hugo guardrails
+│   └── stremio/                              #   6 Stremio guardrails
 │
 ├── LICENSE
 └── README.md
@@ -152,19 +148,19 @@ indie-studio-roadmap/
 
 ## Changelog
 
+### v4.0 (2026-02-26)
+- **Stremio Web Expert** — New skill: senior Stremio developer with 6 commands, 8 references, 8 guardrails
+- Full React+WASM architecture knowledge, addon system, player, PWA, spatial navigation
+
 ### v3.0 (2026-02-26)
-- **Hugo Expert skill** — Senior Hugo developer with 6 commands, 8 references, 8 guardrails
-- **Cursor IDE compatibility** — Rules (.mdc), commands and skills with YAML frontmatter
-- **Dual-platform plugin** — Works on both Claude Code and Cursor IDE
+- **Hugo Expert** — Senior Hugo developer with 6 commands, 8 references, 8 guardrails
+- Cursor IDE compatibility
 
 ### v2.0 (2026-02-26)
-- **Bucle de Orquestacion Multi-Agente** — 4 fases con aprobacion humana
-- **Guardrail G1: Humano en el Medio** — Nunca avanza sin OK
-- **Tracking de fase en sprint** — Cada tarea sabe en que paso del bucle esta
-- **Metricas de aprobacion** — Approval rate y rechazos
+- Multi-Agent Orchestration Loop (4 phases with human approval)
 
 ### v1.0 (2026-02-25)
-- Release inicial: roadmap, sprints, deuda, metricas, 8 commands, 8 references
+- Initial release: roadmap, sprints, debt, metrics
 
 ## License
 

@@ -1,0 +1,11 @@
+---
+description: "G6: Spatial navigation — every interactive element must be keyboard/remote navigable"
+alwaysApply: true
+globs: "src/components/**/*.{js,jsx,ts,tsx}"
+---
+
+# Spatial Navigation First
+
+Every interactive element MUST have tabIndex={0} and be navigable with keyboard and remote control.
+Use focus management, react-focus-lock for modals, and restore focus on unmount.
+The app targets Smart TVs with D-pad navigation via spatial-navigation-polyfill.

@@ -1,7 +1,7 @@
 {
   "name": "indie-studio-roadmap",
-  "description": "AI-Native Orchestrator v2.0 + Hugo Expert Agent. Two skills in one: (1) 4-phase orchestration loop for indie studios building B2B SaaS, (2) Senior Hugo Developer for static sites.",
-  "version": "3.0.0",
+  "description": "Indie Studio Toolkit v4.0 — Three skills: (1) SaaS Orchestrator with 4-phase loop, (2) Hugo Expert for static sites, (3) Stremio Web Expert for React+WASM media center development.",
+  "version": "4.0.0",
   "author": {
     "name": "Contan2",
     "url": "https://github.com/onick"

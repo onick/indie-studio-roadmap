@@ -2,7 +2,7 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "indie-studio-roadmap",
   "metadata": {
-    "description": "AI-Native Orchestrator v2.0 + Hugo Expert Agent. Two skills: SaaS roadmap orchestrator and senior Hugo developer."
+    "description": "Indie Studio Toolkit v4.0 — Three specialized skills for indie dev studios."
   },
   "owner": {
     "name": "Contan2",
@@ -11,8 +11,8 @@
   "plugins": [
     {
       "name": "indie-studio-roadmap",
-      "description": "Two specialized skills: (1) AI-Native Orchestrator with 4-phase loop (Architect → Backend → Frontend → QA) for indie studios building B2B SaaS, and (2) Hugo Expert — senior Hugo developer for static sites with templates, content management, Hugo Pipes, modules, and deployment.",
-      "version": "3.0.0",
+      "description": "Three skills: (1) SaaS Orchestrator with 4-phase multi-agent loop, (2) Hugo Expert for static sites, (3) Stremio Web Expert for React+WASM media center development.",
+      "version": "4.0.0",
       "author": {
         "name": "Contan2",
         "url": "https://github.com/onick"
@@ -20,7 +20,7 @@
       "source": "./",
       "category": "productivity",
       "homepage": "https://github.com/onick/indie-studio-roadmap",
-      "tags": ["roadmap", "sprint", "saas", "indie", "b2b", "release", "tech-debt", "ai-native", "orchestrator", "hugo", "static-site", "go-templates", "tailwindcss", "seo", "deployment"]
+      "tags": ["roadmap", "sprint", "saas", "indie", "b2b", "release", "tech-debt", "orchestrator", "hugo", "static-site", "stremio", "react", "wasm", "webassembly", "streaming", "media-center", "addons", "pwa"]
     }
   ]
 }

@@ -1,0 +1,12 @@
+---
+description: "Import pattern: CommonJS for .js files, ES modules for .ts/.tsx files"
+alwaysApply: true
+globs: "src/**/*.js"
+---
+
+# CommonJS for JavaScript Files
+
+JavaScript files (.js) use CommonJS: `require()` and `module.exports`.
+TypeScript files (.ts/.tsx) use ES modules: `import/export`.
+Path alias: `stremio/*` maps to `src/*`.
+4-space indentation, single quotes, semicolons required.

@@ -1,0 +1,11 @@
+---
+description: "G8: i18n mandatory — no hardcoded user-visible strings"
+alwaysApply: true
+globs: "src/**/*.{js,jsx,ts,tsx}"
+---
+
+# i18n Mandatory
+
+EVERY user-visible string must use i18next via `t('KEY')` or `useTranslation()`.
+Keys in UPPER_SNAKE_CASE. Run `pnpm run scan-translations` after changes.
+Translations live in the `stremio-translations` package.
