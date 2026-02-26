@@ -1,16 +1,21 @@
-# 🗺️ Indie Studio Roadmap Orchestrator
+# 🗺️ Indie Studio Orchestrator v2.0
 
-**Claude Code Plugin** — Director Técnico, Product Architect y Release Captain para estudios indie (1-5 personas + agentes AI) construyendo productos B2B SaaS.
+**Claude Code Plugin** — Director Técnico Orquestador para estudios indie (1-5 personas + agentes AI) construyendo B2B SaaS.
 
 ## Qué hace
 
-Gestiona roadmap, sprints, releases y deuda técnica entre sesiones de Claude Code. Mantiene estado persistente en `.indie-studio/` dentro de tu proyecto.
+Orquesta el ciclo completo de desarrollo: **Arquitecto → Backend → Frontend → QA**, pidiendo aprobación humana en cada paso. Mantiene estado persistente en `.indie-studio/` entre sesiones.
 
-### Tres roles, una cabeza
+### v2.0: Bucle de Orquestación Multi-Agente
 
-- **Director Técnico:** Prioridades técnicas. Deuda trackeada, no ignorada.
-- **Product Architect:** Módulos con dependencias claras. Un módulo terminado > tres empezados.
-- **Release Captain:** Staging → QA → tag → producción. Sin excepciones.
+```
+🧠 Arquitecto    →  ⏸️ ¿Apruebas el plan?
+👨‍💻 Backend       →  ⏸️ ¿Apruebas la API?
+⚛️ Frontend      →  ⏸️ ¿Apruebas la UI?
+🧪 QA & Release  →  ✅ Listo para commit
+```
+
+El agente NUNCA avanza al siguiente paso sin tu aprobación. Tú eres El Piloto.
 
 ## Installation
 
@@ -40,22 +45,24 @@ Al ejecutar `/roadmap-init`, se genera `.indie-studio/` en tu proyecto:
 ```
 .indie-studio/
 ├── roadmap.md          # Visión, fases, dependencias
-├── sprint-current.md   # Sprint activo con tareas
+├── sprint-current.md   # Sprint activo con tareas + fase del bucle
 ├── sprint-log.md       # Historial de sprints y retros
 ├── modules.md          # Registro de módulos y estado
 ├── releases.md         # Historial de releases
 ├── debt-register.md    # Deuda técnica con severidad
-└── metrics.md          # Velocity y métricas entre sesiones
+└── metrics.md          # Velocity, release cadence, y approval rate
 ```
 
-## Principios
+## Guardrails
 
-1. **Un módulo terminado vale más que tres empezados.** Terminado = endpoint + frontend + test + staging.
-2. **La deuda técnica es inventario.** Se trackea en `debt-register.md` con severidad y deadline. 20% de cada sprint va a deuda.
-3. **Release es un ritual, no un accidente.** Staging → checklist → tag → producción. Siempre.
-4. **Los agentes AI son junior devs.** Necesitan scope preciso, no "construye el módulo X".
-5. **Mide lo que importa.** Pre-launch: módulos completados, deploy frequency. Post-launch: MRR, churn, TTFV.
-6. **El roadmap es un documento vivo.** Se actualiza cada sprint. Pivotar no es vergüenza.
+1. **Humano en el Medio** — Nunca avanza sin aprobación explícita. CADA paso requiere tu OK.
+2. **Un módulo terminado > tres empezados** — Endpoint + frontend + test + staging.
+3. **Deuda es inventario** — 20% de cada sprint. No negociable.
+4. **Release es ritual** — Staging → checklist → tag → producción.
+5. **Estado primero, UI después** — El backend es la verdad. El frontend es vista.
+6. **Agentes AI son juniors** — Scope preciso, no "construye el módulo X".
+7. **Testing obligatorio** — Flujos de dinero y auth sin tests = rechazados.
+8. **Roadmap vivo** — Se actualiza cada sprint. Pivotar no es vergüenza.
 
 ## Stack soportado
 
@@ -72,35 +79,26 @@ indie-studio-roadmap/
 │   ├── plugin.json                       # Plugin metadata
 │   └── marketplace.json                  # Marketplace registry
 ├── .claude/
-│   ├── commands/
-│   │   ├── roadmap-init.md
-│   │   ├── roadmap-status.md
-│   │   ├── roadmap-sprint.md
-│   │   ├── roadmap-release.md
-│   │   ├── roadmap-audit.md
-│   │   ├── roadmap-pivot.md
-│   │   ├── roadmap-retro.md
-│   │   └── roadmap-sync.md
+│   ├── commands/                         # 8 slash commands
 │   └── skills/
 │       └── indie-studio-roadmap/
-│           ├── SKILL.md                  # Cerebro principal
-│           └── references/
-│               ├── product-strategy.md
-│               ├── release-management.md
-│               ├── tech-debt-patterns.md
-│               ├── ai-native-workflows.md
-│               ├── metrics-and-kpis.md
-│               ├── infrastructure-checklist.md
-│               ├── saas-launch-checklist.md
-│               └── module-decomposition.md
+│           ├── SKILL.md                  # Cerebro v2.0
+│           └── references/               # 8 knowledge docs
 ├── LICENSE
 └── README.md
 ```
 
-## Idioma
+## Changelog
 
-- **Comunicación:** Español
-- **Código, commits, variables:** Inglés
+### v2.0 (2026-02-26)
+- **Bucle de Orquestación Multi-Agente** — 4 fases con aprobación humana obligatoria
+- **Guardrail G1: Humano en el Medio** — Nunca avanza sin OK explícito
+- **Tracking de fase en sprint** — Cada tarea sabe en qué paso del bucle está
+- **Métricas de aprobación** — Approval rate y rechazos del piloto
+- **Sprint log mejorado** — Registra rechazos como aprendizaje
+
+### v1.0 (2026-02-25)
+- Release inicial: roadmap, sprints, deuda, métricas, 8 commands, 8 references
 
 ## License
 
